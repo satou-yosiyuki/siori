@@ -1,3 +1,41 @@
-.content {
-  margin-top: 50px;
+.container {
+  margin-top: 70px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+  text-align: center;
+}
+
+.heading {
+  flex-direction: column; /* 子要素を縦に配置 */
+  justify-content: center; /* 子要素を縦方向に中央揃え */
+  align-items: center; /* 子要素を横方向に中央揃え */
+}
+
+/* タイトルのスタイル */
+.title {
+  font-size: 24px; /* タイトルのフォントサイズ */
+  text-align: center; /* テキストを中央揃え */
+}
+
+/* 小さめの文章のスタイル */
+.subtext {
+  font-size: 16px; /* 文章のフォントサイズ */
+  color: #666; /* 文章の色を設定 */
+  margin-top: 10px; /* タイトルと文章の間に余白を設定 */
+  text-align: center; /* テキストを中央揃え */
+}
+
+.columns {
+  display: flex;
+  justify-content: space-between;
+  width: 80%; /* カラムの幅を調整 */
+  margin-top: 20px; /* カラムと説明文の間に余白を設定 */
+}
+
+.column {
+  flex: 1; /* カラムを均等に広げる */
+  padding: 10px; /* カラム内の余白を設定 */
+  text-align: center; /* テキストを中央揃え */
 }
