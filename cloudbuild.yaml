@@ -38,7 +38,7 @@ steps:
 
 substitutions:
   _REGION: asia-northeast1
-  _SERVICE_NAME: nextjs-cloudrun
-  _IMAGE_NAME: nextjs-cloudrun
+  _SERVICE_NAME: siori
+  _IMAGE_NAME: siori
   _TAG: latest
   _NODE_VERSION: 19.0.0
