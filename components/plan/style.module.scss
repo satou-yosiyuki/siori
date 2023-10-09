@@ -1,0 +1,54 @@
+/* カラムコンテナ全体のスタイル */
+.container {
+  margin-top: 70px;
+  display: flex;
+  flex-wrap: wrap; /* カラムが次の行に折り返す */
+  gap: 20px; /* カラム間の間隔を設定 */
+  padding: 20px; /* カラムコンテナの周りに余白を設定 */
+}
+
+/* 各カラムのスタイル */
+.column {
+  flex: 1;
+  min-width: calc(33.33% - 20px); /* カラムの最小幅を設定（3カラム） */
+  background-color: #f0f0f0;
+  padding: 20px;
+  border: 1px solid #ccc;
+  text-align: center;
+}
+
+/* ページコンテンツ全体のスタイル */
+.page-content {
+  position: relative;
+  min-height: 100vh; /* ページ全体を最低限の高さに設定 */
+  padding-bottom: 60px; /* しおりを作成ボタンの高さ分の余白を設定 */
+}
+
+/* しおりを作成ボタンのスタイル */
+.bookmark {
+  position: fixed; /* ボタンを固定位置に配置 */
+  bottom: 20px; /* 画面下部からの距離 */
+  right: 20px; /* 画面右側からの距離 */
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 30px; /* 丸い形状に設定 */
+  padding: 50px 50px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2); /* ドロップシャドウを追加 */
+  z-index: 1;
+
+  /* プラスアイコンのスタイル */
+  .bookmarkIcon {
+    margin-right: 8px; /* アイコンとテキストの間隔 */
+    font-size: 24px;
+    text-decoration: none; /* アンダーラインを削除 */
+  }
+
+  /* テキストのスタイル */
+  .bookmarkText {
+    font-size: 16px;
+  }
+}

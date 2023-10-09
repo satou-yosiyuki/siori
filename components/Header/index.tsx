@@ -5,7 +5,9 @@ import Link from "next/link";
 const Header = () => {
   return (
     <div className={styles.header}>
-      <div className={styles.title}>しおり</div>
+      <Link href={"/"} className={styles.title}>
+        しおり
+      </Link>
       <Link className={styles.link} href="/login">
         ログイン
       </Link>
