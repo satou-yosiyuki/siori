@@ -13,7 +13,7 @@ const Content = () => {
       </div>
 
       <div className={styles.columns}>
-        <div className={styles.column}>追加機能作成中</div>
+        <div className={styles.column}>追加機能作成中1</div>
         <div className={styles.column}>追加機能作成中</div>
         <div className={styles.column}>追加機能作成中</div>
       </div>
