@@ -13,27 +13,23 @@ const Form: React.FC<FormProps> = (props) => {
   const [password, setPassword] = React.useState<string>("");
 
   return (
-    <div>
-      <div className={styles.container}>
-        <form
-          className={styles.form}
-          onSubmit={() => onSubmit(email, password)}
-        >
-          <input
-            type="email"
-            placeholder="Email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-          />
-          <input
-            type="password"
-            placeholder="Password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-          />
-          <button type="submit">{text}</button>
-        </form>
-      </div>
+    <div className={styles.container}>
+      <h1 className={styles.title}>{text}</h1>
+      <form className={styles.form} onSubmit={() => onSubmit(email, password)}>
+        <input
+          type="email"
+          placeholder="Email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+        />
+        <input
+          type="password"
+          placeholder="Password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+        />
+        <button type="submit">{text}</button>
+      </form>
     </div>
   );
 };
