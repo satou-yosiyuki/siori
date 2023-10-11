@@ -1,28 +1,29 @@
 /* ヘッダーのスタイル */
 .header {
-  position: fixed; /* 上部に固定する */
+  position: fixed;
   top: 0;
   left: 0;
   right: 0;
-  height: 50px; /* 高さを50pxに設定 */
-  background-color: #333; /* 背景色を設定 */
-  color: #fff; /* テキストの色を設定 */
+  height: 50px;
+  background-color: #333;
+  color: #fff;
   display: flex;
-  justify-content: space-between; /* 左右の要素を均等に配置 */
-  align-items: center; /* 垂直方向に中央揃え */
-  padding: 0 20px; /* 左右の余白を設定 */
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
 }
 
 /* ログインリンクのスタイル */
 .header .link {
-  text-decoration: none; /* 下線をなくす */
-  color: #fff; /* リンクの色を設定 */
+  text-decoration: none;
+  color: #fff;
+  padding-right: 30px;
 }
 
 /* 左端の「しおり」のスタイル */
 .title {
   font-weight: bold;
   font-size: 20px;
-  text-decoration: none; /* 下線をなくす */
-  color: #fff; /* リンクの色を設定 */
+  text-decoration: none;
+  color: #fff;
 }

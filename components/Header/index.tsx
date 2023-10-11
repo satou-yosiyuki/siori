@@ -8,12 +8,14 @@ const Header = () => {
       <Link href={"/"} className={styles.title}>
         しおり
       </Link>
-      <Link className={styles.link} href="/login">
-        ログイン
-      </Link>
-      <Link className={styles.link} href="/signup">
-        会員登録
-      </Link>
+      <div>
+        <Link className={styles.link} href="/login">
+          ログイン
+        </Link>
+        <Link className={styles.link} href="/signup">
+          会員登録
+        </Link>
+      </div>
     </div>
   );
 };

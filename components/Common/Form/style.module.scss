@@ -1,15 +1,25 @@
 .container {
   display: flex;
   flex-direction: column;
-  margin: 80px 400px 0 400px;
+  align-items: center;
+  margin-top: 80px;
   height: 100vh;
 
   .title {
     text-align: center;
   }
 
+  .pushSignUp {
+    text-decoration: none;
+    padding-bottom: 20px;
+    padding-left: 300px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
   .form {
-    padding: 30px;
+    padding: 20px;
     background-color: #f0f0f0;
     border: 1px solid #ccc;
     border-radius: 5px;
