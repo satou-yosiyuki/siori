@@ -1,17 +1,25 @@
+/**
+ * プラン一覧画面
+ */
 import React from "react";
 import { useForm, Controller, SubmitHandler } from "react-hook-form";
 import styles from "./style.module.scss";
 import Modal from "../Modal";
 
+/**
+ * プラン作成時のモーダルに渡すprops
+ */
 interface FormData {
   title: string;
   departureDate: string;
   returnDate: string;
 }
 
+/**
+ * プラン一覧画面
+ */
 const PlanContent = () => {
-  const [isOpen, setIsOpen] = React.useState(false);
-
+  const [isOpen, setIsOpen] = React.useState(false); // モーダルの開閉
   const {
     control,
     handleSubmit,
@@ -24,16 +32,20 @@ const PlanContent = () => {
 
   return (
     <>
-      <div className={styles.container}>
+      {/* FIX: データ取得して表示する */}
+      <div className={styles.planListContainer}>
         <div className={styles.column}>沖縄</div>
         <div className={styles.column}>北海道</div>
         <div className={styles.column}>韓国</div>
         <div className={styles.column}>福岡</div>
       </div>
-      <div className={styles.bookmark} onClick={() => setIsOpen(true)}>
-        <span className={styles.bookmarkIcon}>+</span>
-        <span className={styles.bookmarkText}></span>
+
+      {/* しおりを作成するアイコン */}
+      <div className={styles.createPlanIcon} onClick={() => setIsOpen(true)}>
+        <span className={styles.addIcon}>+</span>
       </div>
+
+      {/* プラン作成モーダル */}
       <Modal isOpen={isOpen} onClose={() => setIsOpen(false)}>
         <form onSubmit={handleSubmit(onSubmit)} className={styles.travelForm}>
           <div className={styles.formGroup}>

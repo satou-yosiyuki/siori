@@ -1,31 +1,24 @@
-/* カラムコンテナ全体のスタイル */
-.container {
+/* プラン一覧のカラム */
+.planListContainer {
   margin-top: 70px;
   display: flex;
   flex-wrap: wrap; /* カラムが次の行に折り返す */
   gap: 20px; /* カラム間の間隔を設定 */
   padding: 20px; /* カラムコンテナの周りに余白を設定 */
+
+  /* 各カラムのスタイル */
+  .column {
+    flex: 1;
+    min-width: calc(33.33% - 20px); /* カラムの最小幅を設定（3カラム） */
+    background-color: #f0f0f0;
+    padding: 20px;
+    border: 1px solid #ccc;
+    text-align: center;
+  }
 }
 
-/* 各カラムのスタイル */
-.column {
-  flex: 1;
-  min-width: calc(33.33% - 20px); /* カラムの最小幅を設定（3カラム） */
-  background-color: #f0f0f0;
-  padding: 20px;
-  border: 1px solid #ccc;
-  text-align: center;
-}
-
-/* ページコンテンツ全体のスタイル */
-.page-content {
-  position: relative;
-  min-height: 100vh; /* ページ全体を最低限の高さに設定 */
-  padding-bottom: 60px; /* しおりを作成ボタンの高さ分の余白を設定 */
-}
-
-/* しおりを作成ボタンのスタイル */
-.bookmark {
+/* しおりを作成するボタンのスタイル */
+.createPlanIcon {
   position: fixed; /* ボタンを固定位置に配置 */
   bottom: 70px; /* 画面下部からの距離 */
   right: 40px; /* 画面右側からの距離 */
@@ -39,66 +32,62 @@
   z-index: 1;
 
   /* プラスアイコンのスタイル */
-  .bookmarkIcon {
+  .addIcon {
     margin-right: 8px; /* アイコンとテキストの間隔 */
     font-size: 24px;
     text-decoration: none; /* アンダーラインを削除 */
   }
-
-  /* テキストのスタイル */
-  .bookmarkText {
-    font-size: 16px;
-  }
 }
-/* styles/TravelForm.module.scss */
+
+// しおりを作成するモーダルのスタイル
 .travelForm {
   display: flex;
   flex-direction: column;
   max-width: 400px;
   margin: 0 auto;
-}
 
-.formGroup {
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 10px;
+  .formGroup {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
 
-  label {
-    margin-bottom: 5px;
+    label {
+      margin-bottom: 5px;
+    }
+
+    input {
+      padding: 8px;
+      border: 1px solid #ccc;
+    }
+
+    p {
+      color: red;
+      margin-top: 5px;
+    }
   }
 
-  input {
-    padding: 8px;
-    border: 1px solid #ccc;
+  .buttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
   }
 
-  p {
-    color: red;
-    margin-top: 5px;
+  .button {
+    color: white;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-align: left;
   }
-}
 
-.buttons {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
+  .createButton {
+    background: #0077cc;
+    @extend .button;
+  }
 
-.button {
-  color: white;
-  padding: 8px 16px;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  text-align: left;
-}
-
-.createButton {
-  background: #0077cc;
-  @extend .button;
-}
-
-.closeButton {
-  background: red;
-  @extend .button;
+  .closeButton {
+    background: red;
+    @extend .button;
+  }
 }
