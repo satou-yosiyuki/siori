@@ -1,31 +1,24 @@
-import { useState } from "react";
-import { createUserWithEmailAndPassword } from "firebase/auth";
+import Form from "../components/Common";
+import Footer from "../components/Footer";
+import Header from "../components/Header";
+import SignUpForm from "../components/SignUp";
 import { registerUser } from "../lib/firebase";
 
-export default function SignUp() {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-
-  const handleSignUp = async () => {
+const SignUp: React.FC = () => {
+  /**
+   * 会員登録処理
+   */
+  const handleSignUp = async (email: string, password: string) => {
     await registerUser(email, password);
   };
 
   return (
     <div>
-      <h1>会員登録</h1>
-      <input
-        type="email"
-        placeholder="メールアドレス"
-        value={email}
-        onChange={(e) => setEmail(e.target.value)}
-      />
-      <input
-        type="password"
-        placeholder="パスワード"
-        value={password}
-        onChange={(e) => setPassword(e.target.value)}
-      />
-      <button onClick={handleSignUp}>登録</button>
+      <Header />
+      <Form onSubmit={handleSignUp} text={"会員登録"} />
+      <Footer />
     </div>
   );
-}
+};
+
+export default SignUp;
