@@ -1,7 +1,7 @@
 import React from "react";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
-import PlanContent from "../components/plan";
+import PlanContent from "../components/Plan";
 
 const plan = () => {
   return (
