@@ -1,4 +1,4 @@
-import Form from "../components/Common";
+import Form from "../components/Common/Form";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
 import SignUpForm from "../components/SignUp";
