@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "gcp-build": "next build"
+    "deploy": "gcloud run deploy"
   },
   "dependencies": {
     "next": "13.5.4",
