@@ -1,0 +1,14 @@
+# ビルド関連のファイル
+.next/
+out/
+
+# 依存関係
+node_modules/
+
+# ローカル設定
+.env
+
+# デバッグファイル
+*.log
+*.debug
+.vscode/
