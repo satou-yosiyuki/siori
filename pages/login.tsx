@@ -2,20 +2,20 @@ import React, { useState } from "react";
 import styles from "./style.module.scss";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
-import Router from "next/router";
+import { loginUser } from "../lib/firebase";
 
 const Login: React.FC = () => {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [email, setEmail] = useState<string>("");
+  const [password, setPassword] = useState<string>("");
 
   /**
    * ログイン処理
    * @param e
    */
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     // ログイがうまく行ったときプラン画面に遷移
-    Router.push("/plan");
+    await loginUser(email, password);
   };
 
   return (

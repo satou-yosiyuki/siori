@@ -1,5 +1,10 @@
 import { initializeApp } from "firebase/app";
-import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
+import {
+  getAuth,
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
+} from "firebase/auth";
+import Router from "next/router";
 
 const firebaseConfig = {
   apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
@@ -27,5 +32,21 @@ export const registerUser = async (email: string, password: string) => {
     console.log("新しいユーザーが登録されました:", user);
   } catch (error) {
     console.error("会員登録中にエラーが発生しました:", error);
+  }
+};
+
+// ログイン処理
+export const loginUser = async (email: string, password: string) => {
+  try {
+    const userCredential = await signInWithEmailAndPassword(
+      auth,
+      email,
+      password
+    );
+    const user = userCredential.user;
+    console.log("ログイン成功:", user);
+    Router.push("/plan");
+  } catch (error) {
+    console.error("ログインエラー:", error);
   }
 };
