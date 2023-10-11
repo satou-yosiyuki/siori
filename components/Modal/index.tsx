@@ -1,15 +1,20 @@
-// components/Modal.tsx
+/**
+ * モーダルの枠
+ */
 import React, { ReactNode } from "react";
 import styles from "./style.module.scss";
 
+/**
+ * モーダルに渡すprops
+ */
 interface ModalProps {
   isOpen: boolean;
-  onClose: () => void;
   children: ReactNode;
 }
 
 const Modal: React.FC<ModalProps> = (props) => {
-  const { isOpen, onClose, children } = props;
+  const { isOpen, children } = props;
+
   if (!isOpen) {
     return null;
   }
