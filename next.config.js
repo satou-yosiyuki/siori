@@ -1,8 +1,8 @@
 /** @type {import('next').NextConfig} */
-module.exports = {
+const nextConfig = {
+  reactStrictMode: false,
+  swcMinify: true,
   output: "standalone",
-  serverRuntimeConfig: {
-    // カスタムタイムアウトを設定
-    apiTimeout: 30000, // 30秒
-  },
 };
+
+module.exports = nextConfig;
