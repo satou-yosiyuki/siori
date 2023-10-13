@@ -46,7 +46,7 @@ const PlanContent = () => {
       </div>
 
       {/* プラン作成モーダル */}
-      <Modal isOpen={isOpen} onClose={() => setIsOpen(false)}>
+      <Modal isOpen={isOpen}>
         <form onSubmit={handleSubmit(onSubmit)} className={styles.travelForm}>
           <div className={styles.formGroup}>
             <label htmlFor="title">タイトル</label>
