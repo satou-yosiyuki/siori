@@ -4,10 +4,10 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
     "start": "next start",
     "lint": "next lint",
     "container push": "gcloud builds submit --tag asia.gcr.io/siori-401502/siori-1:latest",
+    "build": "docker push gcr.io/siori-401502/siori:latest",
     "deploy": "gcloud run deploy"
   },
   "dependencies": {
