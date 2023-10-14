@@ -13,7 +13,7 @@ const Content = () => {
       </div>
 
       <div className={styles.columns}>
-        <div className={styles.column}>テスト変更</div>
+        <div className={styles.column}>テスト</div>
         <div className={styles.column}>テスト</div>
         <div className={styles.column}>追加機能作成中</div>
       </div>
