@@ -9,6 +9,7 @@
 ・TypeScript<br/>
 ・SassModule<br/>
 ・CloudRun(デプロイ)<br/>
+・Graphql
 
 ## 画面
 
@@ -17,6 +18,6 @@
 ・/plan<br/>プラン一覧画面<br/>　-プラン作成モーダル<br/>
 
 ## デプロイ
-yarn run build 
+yarn run build <br>
 yarn run deploy
 
