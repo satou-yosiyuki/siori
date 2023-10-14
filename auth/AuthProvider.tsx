@@ -1,6 +1,6 @@
 import firebase from "firebase/app";
 import { createContext, useEffect, useState, VFC, ReactNode } from "react";
-import { User } from "firebase/auth";
+import { User, onAuthStateChanged } from "firebase/auth";
 import { auth } from "../lib/firebase";
 import Loading from "../components/Loading";
 
@@ -29,12 +29,12 @@ const AuthProvider: React.FC<Props> = ({ children }) => {
 
   // ログイン状態を確認する
   useEffect(() => {
-    auth.onAuthStateChanged(async (user) => {
+    onAuthStateChanged(auth, (user) => {
       if (user) {
         setCurrentUser(user);
         setSignInCheck(true);
       } else {
-        setSignInCheck(true);
+        setSignInCheck(false);
       }
     });
   });
@@ -47,7 +47,11 @@ const AuthProvider: React.FC<Props> = ({ children }) => {
     );
   } else {
     // ログイン確認中
-    return <Loading />;
+    return (
+      <AuthContext.Provider value={{ currentUser, signInCheck }}>
+        {children}
+      </AuthContext.Provider>
+    );
   }
 };
 

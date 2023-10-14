@@ -1,9 +1,13 @@
-import React, { FormEventHandler } from "react";
+import React, { FormEvent, FormEventHandler } from "react";
 import styles from "./style.module.scss";
 import Link from "next/link";
 
 interface FormProps {
-  onSubmit: (email: string, password: string) => Promise<void>;
+  onSubmit: (
+    event: FormEvent,
+    email: string,
+    password: string
+  ) => Promise<void>;
   text: "ログイン" | "会員登録";
 }
 
@@ -21,7 +25,10 @@ const Form: React.FC<FormProps> = (props) => {
           会員登録はこちら
         </Link>
       )}
-      <form className={styles.form} onSubmit={() => onSubmit(email, password)}>
+      <form
+        className={styles.form}
+        onSubmit={(event) => onSubmit(event, email, password)}
+      >
         <input
           type="email"
           placeholder="Email"

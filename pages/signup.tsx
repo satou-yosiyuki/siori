@@ -1,3 +1,4 @@
+import { FormEvent } from "react";
 import Form from "../components/Common/Form";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
@@ -7,7 +8,12 @@ const SignUp: React.FC = () => {
   /**
    * 会員登録処理
    */
-  const handleSignUp = async (email: string, password: string) => {
+  const handleSignUp = async (
+    event: FormEvent,
+    email: string,
+    password: string
+  ) => {
+    event.preventDefault();
     await registerUser(email, password);
   };
 

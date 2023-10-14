@@ -3,8 +3,9 @@ import {
   getAuth,
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
+  signOut,
 } from "firebase/auth";
-import Router from "next/router";
+import { useRouter } from "next/router";
 
 const firebaseConfig = {
   apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
@@ -20,8 +21,6 @@ export const auth = getAuth(app);
 
 // 会員登録関数
 export const registerUser = async (email: string, password: string) => {
-  console.log(" process.env", process.env);
-  console.log("auth", auth);
   try {
     const userCredential = await createUserWithEmailAndPassword(
       auth,
@@ -45,8 +44,17 @@ export const loginUser = async (email: string, password: string) => {
     );
     const user = userCredential.user;
     console.log("ログイン成功:", user);
-    Router.push("/plan");
   } catch (error) {
     console.error("ログインエラー:", error);
+  }
+};
+
+// ログアウトボタンをクリックしたときの処理
+export const logoutUser = async () => {
+  try {
+    await signOut(auth);
+    console.log("ログアウトしました。");
+  } catch (error) {
+    console.error("ログアウトエラー:", error);
   }
 };
