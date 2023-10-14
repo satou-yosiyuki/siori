@@ -5,7 +5,7 @@ import {
   signInWithEmailAndPassword,
   signOut,
 } from "firebase/auth";
-import { useRouter } from "next/router";
+import Router from "next/router";
 
 const firebaseConfig = {
   apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
@@ -28,6 +28,7 @@ export const registerUser = async (email: string, password: string) => {
       password
     );
     const user = userCredential.user;
+    Router.push("/plan");
     console.log("新しいユーザーが登録されました:", user);
   } catch (error) {
     console.error("会員登録中にエラーが発生しました:", error);
