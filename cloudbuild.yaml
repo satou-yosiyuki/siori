@@ -1,20 +1,28 @@
 steps:
   # Build the container image
   - name: "gcr.io/cloud-builders/docker"
-    args: ["build", "-t", "gcr.io/$PROJECT_ID/siori:$COMMIT_SHA", "."]
+    args:
+      [
+        "build",
+        "-t",
+        "gcr.io/siori-401502/asia.gcr.io/siori-401502/siori-1",
+        ".",
+      ]
   # Push the container image to Container Registry
   - name: "gcr.io/cloud-builders/docker"
-    args: ["push", "gcr.io/$PROJECT_ID/siori:$COMMIT_SHA"]
+    args: ["push", "gcr.io/siori-401502/asia.gcr.io/siori-401502/siori-1"]
   # Deploy container image to Cloud Run
   - name: "gcr.io/google.com/cloudsdktool/cloud-sdk"
     entrypoint: gcloud
     args:
-      - "run"
-      - "deploy"
-      - "siori"
-      - "--image"
-      - "gcr.io/$PROJECT_ID/siori:$COMMIT_SHA"
-      - "--region"
-      - "asia-northeast1"
+      [
+        "run",
+        "deploy",
+        "siori",
+        "--image",
+        "gcr.io/siori-401502/asia.gcr.io/siori-401502/siori-1",
+        "--region",
+        "asia-northeast1",
+      ]
 images:
-  - "gcr.io/$PROJECT_ID/siori:$COMMIT_SHA"
+  - gcr.io/siori-401502/asia.gcr.io/siori-401502/siori-1
