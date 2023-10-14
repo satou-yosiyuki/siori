@@ -16,3 +16,7 @@
 ・/login<br/>ログイン画面<br/>
 ・/plan<br/>プラン一覧画面<br/>　-プラン作成モーダル<br/>
 
+## デプロイ
+yarn run build 
+yarn run deploy
+
