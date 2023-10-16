@@ -6,6 +6,7 @@
   "dependencies": {
     "apollo-server": "^3.12.1",
     "graphql": "^16.8.1",
-    "nodemon": "^3.0.1"
+    "nodemon": "^3.0.1",
+    "prisma": "^5.4.2"
   }
 }
