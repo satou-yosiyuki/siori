@@ -9,7 +9,9 @@
 ・TypeScript<br/>
 ・SassModule<br/>
 ・CloudRun(デプロイ)<br/>
-・Graphql
+・Graphql<br>
+・prisma<br/>
+・MySql
 
 ## 画面
 
